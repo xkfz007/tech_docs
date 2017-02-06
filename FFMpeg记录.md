@@ -190,7 +190,7 @@ int64\_t first\_timestamp;
 int64\_t cur\_timestamp;
 
 hls\_read\_packet函数中，会设置first\_timestamp
-
+``` C
 if (c-\>first\_timestamp == AV\_NOPTS\_VALUE &&
 
 pls-\>pkt.dts != AV\_NOPTS\_VALUE)
@@ -198,6 +198,7 @@ pls-\>pkt.dts != AV\_NOPTS\_VALUE)
 c-\>first\_timestamp = av\_rescale\_q(pls-\>pkt.dts,
 
 get\_timebase(pls), AV\_TIME\_BASE\_Q);
+```
 
 m3u8中ts切片长差别大带来的问题
 ------------------------------
